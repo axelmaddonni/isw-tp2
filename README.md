@@ -9,7 +9,7 @@
 1. Casos de uso:
  * Manu: 01-03
  * Gonza: 04-05
- * Gabriel: 05-07
+ * Gabriel: 06-07
  * Mathi: 08-09
  * Axel: 10-11
 2. Buscar riesgos
