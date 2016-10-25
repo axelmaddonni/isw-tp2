@@ -7,10 +7,10 @@
 **TODO:**
 
 1. Casos de uso:
- * Manu: 01-03
- * Gonza: 04-05
- * Gabriel: 06-07
- * Mathi: 08-09
- * Axel: 10-11
+ - [x] Manu: 01-03
+ - [] Gonza: 04-05
+ - [] Gabriel: 06-07
+ - [] Mathi: 08-09
+ - [] Axel: 10-11
 2. Buscar riesgos
 3. Diseñar iteraciones a partir de los riesgos encontrados
