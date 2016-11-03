@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Gantt ISW1-TP2" company="" webLink="http://" view-date="2016-11-04" view-index="0" gantt-divider-location="637" resource-divider-location="300" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Gantt ISW1-TP2" company="" webLink="http://" view-date="2016-11-07" view-index="0" gantt-divider-location="618" resource-divider-location="300" version="2.8.1" locale="en_US">
     <description/>
-    <view zooming-state="default:0" id="gantt-chart">
-        <field id="tpd3" name="Name" width="390" order="0"/>
-        <field id="tpd4" name="Begin date" width="102" order="1"/>
-        <field id="tpd5" name="End date" width="126" order="2"/>
+    <view zooming-state="default:1" id="gantt-chart">
+        <field id="tpd3" name="Name" width="383" order="0"/>
+        <field id="tpd4" name="Begin date" width="96" order="1"/>
+        <field id="tpd5" name="End date" width="120" order="2"/>
+        <timeline><![CDATA[55]]></timeline>
+        <option id="color.recent"><![CDATA[#ff3333]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="210" order="0"/>
@@ -33,49 +35,49 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="ReciBarFiesta" meeting="false" start="2016-11-03" duration="12" complete="0" expand="true">
+        <task id="0" name="ReciBarFiesta" meeting="false" start="2016-11-02" duration="13" complete="0" expand="true">
             <depend id="55" type="2" difference="0" hardness="Strong"/>
-            <task id="1" name="Rediseño Conceptual del Sistema" color="#8cb6ce" meeting="false" start="2016-11-03" duration="1" complete="0" expand="true">
+            <task id="1" name="T01 Rediseño Conceptual del Sistema" color="#8cb6ce" meeting="false" start="2016-11-02" duration="2" complete="0" expand="true">
                 <depend id="2" type="2" difference="0" hardness="Strong"/>
                 <depend id="3" type="2" difference="0" hardness="Strong"/>
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
                 <depend id="7" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="2" name="Realización de WBS" color="#8cb6ce" meeting="false" start="2016-11-04" duration="1" complete="0" expand="true">
+            <task id="2" name="T02 Realización de WBS" color="#8cb6ce" meeting="false" start="2016-11-04" duration="1" complete="0" expand="true">
                 <depend id="3" type="2" difference="0" hardness="Strong"/>
                 <depend id="7" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="3" name="Analisis de Riesgos" color="#8cb6ce" meeting="false" start="2016-11-07" duration="1" complete="0" expand="true">
+            <task id="3" name="T03 Analisis de Riesgos" color="#8cb6ce" meeting="false" start="2016-11-07" duration="1" complete="0" expand="true">
                 <depend id="4" type="2" difference="0" hardness="Strong"/>
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
                 <depend id="35" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="4" name="Refinamiento de Objetivos y Requerimientos" color="#8cb6ce" meeting="false" start="2016-11-08" duration="1" complete="0" expand="true">
+            <task id="4" name="T04 Refinamiento de Objetivos y Requerimientos" color="#8cb6ce" meeting="false" start="2016-11-08" duration="1" complete="0" expand="true">
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
                 <depend id="7" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="5" name="Reconocimiento de Casos de Uso" color="#8cb6ce" meeting="false" start="2016-11-09" duration="1" complete="0" expand="true">
+            <task id="5" name="T05 Reconocimiento de Casos de Uso" color="#8cb6ce" meeting="false" start="2016-11-09" duration="1" complete="0" expand="true">
                 <depend id="6" type="2" difference="0" hardness="Strong"/>
                 <depend id="8" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="6" name="Estimación de Tiempo de Casos de Uso" color="#8cb6ce" meeting="false" start="2016-11-10" duration="1" complete="0" expand="true">
+            <task id="6" name="T06 Estimación de Tiempo de Casos de Uso" color="#8cb6ce" meeting="false" start="2016-11-10" duration="1" complete="0" expand="true">
                 <depend id="12" type="2" difference="0" hardness="Strong"/>
                 <depend id="24" type="2" difference="0" hardness="Strong"/>
                 <depend id="34" type="2" difference="0" hardness="Strong"/>
                 <depend id="39" type="2" difference="0" hardness="Strong"/>
                 <depend id="44" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="7" name="Análisis de Atributos de Calidad" color="#8cb6ce" meeting="false" start="2016-11-09" duration="1" complete="0" expand="true"/>
-            <task id="8" name="Diseño de Alto Nivel de la UI" color="#000000" meeting="false" start="2016-11-10" duration="1" complete="0" expand="true">
+            <task id="7" name="T07 Análisis de Atributos de Calidad" color="#8cb6ce" meeting="false" start="2016-11-09" duration="1" complete="0" expand="true"/>
+            <task id="8" name="T08 Diseño de Alto Nivel de la UI" color="#000000" meeting="false" start="2016-11-10" duration="2" complete="0" expand="true">
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
                 <depend id="19" type="2" difference="0" hardness="Strong"/>
                 <task id="9" name="Análisis de la UI de Otras Aplicaciones de la Ciudad" meeting="false" start="2016-11-10" duration="1" complete="0" expand="true"/>
-                <task id="10" name="Diseño de un look-and-feel consistente con dicho análisis" meeting="false" start="2016-11-10" duration="1" complete="0" expand="true">
+                <task id="10" name="Diseño de un look-and-feel consistente con dicho análisis" color="#8cb6ce" meeting="false" start="2016-11-10" duration="2" complete="0" expand="true">
                     <depend id="15" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="11" name="Corroboración del diseño con los Stakeholders" meeting="false" start="2016-11-10" duration="1" complete="0" expand="true"/>
             </task>
-            <task id="12" name="CU03-Buscando Evento" color="#000000" meeting="false" start="2016-11-11" duration="5" complete="0" expand="true">
+            <task id="12" name="T09-CU03 Buscando Evento" color="#000000" meeting="false" start="2016-11-11" duration="5" complete="0" expand="true">
                 <task id="13" name="Arquitectura de Eventos" meeting="false" start="2016-11-11" duration="5" complete="0" expand="true">
                     <task id="14" name="Diseño de Base de Datos" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true">
                         <depend id="15" type="2" difference="0" hardness="Strong"/>
@@ -104,7 +106,7 @@
                     <task id="23" name="Testing" color="#8cb6ce" meeting="false" start="2016-11-15" duration="1" complete="0" expand="true"/>
                 </task>
             </task>
-            <task id="24" name="CU05 - Logueandose" color="#000000" meeting="false" start="2016-11-11" duration="6" complete="0" expand="true">
+            <task id="24" name="T10-CU05 Logueandose" color="#000000" meeting="false" start="2016-11-11" duration="6" complete="0" expand="true">
                 <task id="25" name="Arquitectura de Usuarios" meeting="false" start="2016-11-11" duration="6" complete="0" expand="true">
                     <task id="190" name="Diseño de la Arquitectura" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true">
                         <depend id="26" type="2" difference="0" hardness="Strong"/>
@@ -133,7 +135,7 @@
                     <task id="184" name="Implementació de la Pagina de Log-In" color="#8cb6ce" meeting="false" start="2016-11-14" duration="1" complete="0" expand="true"/>
                 </task>
             </task>
-            <task id="34" name="CU11-Reservando Hoteles" color="#000000" meeting="false" start="2016-11-11" duration="5" complete="0" expand="true">
+            <task id="34" name="T11-CU11 Reservando Hoteles" color="#000000" meeting="false" start="2016-11-11" duration="5" complete="0" expand="true">
                 <task id="40" name="Analizar API de CAHAC" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true">
                     <depend id="35" type="2" difference="0" hardness="Strong"/>
                 </task>
@@ -142,7 +144,7 @@
                 </task>
                 <task id="36" name="Testing" color="#8cb6ce" meeting="false" start="2016-11-17" duration="1" complete="0" expand="true"/>
             </task>
-            <task id="39" name="CU12-Reservando Vuelos" color="#000000" meeting="false" start="2016-11-11" duration="4" complete="0" expand="true">
+            <task id="39" name="T12-CU12 Reservando Vuelos" color="#000000" meeting="false" start="2016-11-11" duration="4" complete="0" expand="true">
                 <task id="41" name="Analizar API de Aerolineas" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true">
                     <depend id="42" type="2" difference="0" hardness="Strong"/>
                 </task>
@@ -151,7 +153,7 @@
                 </task>
                 <task id="43" name="Testing" color="#8cb6ce" meeting="false" start="2016-11-16" duration="1" complete="0" expand="true"/>
             </task>
-            <task id="44" name="CU15-Realizando Reserva" color="#000000" meeting="false" start="2016-11-11" duration="5" complete="0" expand="true">
+            <task id="44" name="T13-CU15 Realizando Reserva" color="#000000" meeting="false" start="2016-11-11" duration="5" complete="0" expand="true">
                 <task id="45" name="Diseño de Bajo Nivel e Implementación" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
                 <task id="46" name="Diseño de las Reservas" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true">
                     <task id="47" name="Diseño de Sistema de Pago Unificado" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true">
@@ -173,7 +175,7 @@
                 </task>
             </task>
         </task>
-        <task id="55" name="Cumplimos Objetivo Aerolineas" color="#8cb6ce" meeting="true" start="2016-11-21" duration="0" complete="0" expand="true"/>
+        <task id="55" name="Cumplimos Objetivo Aerolineas" color="#ff3333" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="true" start="2016-11-21" duration="0" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
