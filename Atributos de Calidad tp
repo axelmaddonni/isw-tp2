@@ -1,0 +1,43 @@
+Atributos de Calidad
+
+SEGURIDAD
+	Información de los usuarios, no disponibles para externos
+	Los datos de las estadísticas son anónimos
+	Detección de usuarios falsos
+	Sólo autorizados puede subir info de envetos
+	Datos para auditabilidad
+	Las decisiones de los usuarios deben ser auditadas
+
+
+DISPONIBILIDAD
+	Comunicación con la API de moderación de contenidos (constante)
+	Nunca dejar de funcionar
+	Auditabilidad exclusiva de la información a una determinada hora (limitado una vez al día pero seguridad EXCLUSIVA). Se debe proveer un servicio a externos
+
+MODIFICABILIDAD
+	Agregar nuevas maneras de visualización de caminos
+	Modificación de la API para moderación de contenidos por mejoras continuas
+
+
+SHARE-DATA
+	Información centralizada
+
+
+PERFORMANCE
+	Demoras en búsquedas de eventos
+	Caché de búsquedas
+
+
+Otros comentarios:
+
+- Que no haya comentarios ofensivos
+
+- Presencia continua de banners de Aerolíneas (carga de los banners en 1 o 2 segundos)
+
+- Sincronización entre carrito de la app y aerolíneas
+
+- Saber la cantidad de contenidos a moderar por intervalos.
+
+- Puede haber revisión manual, no más de 3 horas?
+
+- Desarrolladores expertos con certificados de cursos
