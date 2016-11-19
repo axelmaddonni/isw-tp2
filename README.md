@@ -8,3 +8,10 @@
 
 ## TODO
 
+* Terminar Arquitectura:
+    * Axel: terminar eventos.
+    * Gabriel: mas atomico reservas.
+    * Gonza: Nivel 0 mejor hecho.
+* Explicar toda la arquitectura (cada uno lo que hizo).
+* Escenarios (Manu).
+* Corregir lo de la primera entrega (Mathi y Gonza).
