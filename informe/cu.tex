@@ -1,3 +1,37 @@
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|c|}
+\hline
+\rowcolor[HTML]{CBCEFB} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{CBCEFB}\textbf{Código}} & \multicolumn{1}{c|}{\cellcolor[HTML]{CBCEFB}\textbf{Caso de uso}} & \textbf{Horas Hombre} \\ \hline
+CU01                                                          & Incluyendo un evento cultural                                     & 30                    \\ \hline
+CU02                                                          & Eliminando un evento cultural                                     & 8                     \\ \hline
+CU03                                                          & Buscando evento                                                   & 56                    \\ \hline
+CU04                                                          & Rankeando evento                                                  & 60                    \\ \hline
+CU05                                                          & Logueándose                                                       & 59                    \\ \hline
+CU06                                                          & Compartiendo información en redes sociales                        & 8                     \\ \hline
+CU07                                                          & Editando un evento cultural                                       & 8                     \\ \hline
+CU08                                                          & Registrándose                                                     & 20                    \\ \hline
+CU09                                                          & Verificando contenido inapropiado automáticamente                 & 48                    \\ \hline
+CU10                                                          & Verificando contenido inapropiado manualmente                     & 8                     \\ \hline
+CU11                                                          & Reservando hoteles                                                & 56                    \\ \hline
+CU12                                                          & Reservando vuelos                                                 & 48                    \\ \hline
+CU13                                                          & Enviando publicidad                                               & 20                    \\ \hline
+CU14                                                          & Visualizando caminos                                              & 48                    \\ \hline
+CU15                                                          & Realizando reserva                                                & 56                    \\ \hline
+CU16                                                          & Filtrando resultados                                              & 20                    \\ \hline
+CU17                                                          & Obteniendo estadísticas sobre los usuarios                        & 32                    \\ \hline
+CU18                                                          & Combinando eventos                                                & 32                    \\ \hline
+\end{tabular}
+\caption{Casos de uso}
+\label{tab:cu}
+\end{table}
+
+\subsection{Diagrama de Casos de uso}
+
 \subsection{Descripción de los Casos de uso}
 \begin{enumerate}
   \item \textbf{Incluyendo un evento cultural:} se refiere a la funcionalidad para agregar nuevos eventos, como recitales, charlas, festivales, etc. Solo lo pueden hacer usuarios autorizados (inicialmente solo miembros de dependencias del Estado).
@@ -25,3 +59,4 @@
   %%%
   \item \textbf{Combinando eventos:}  se refiere a la funcionalidad que extiende al caso CU10, permitiendo combinar eventos de forma tal que se obtenga el mejor camino que pasa por todas las ubicaciones.
 \end{enumerate}
+
