@@ -1,0 +1,27 @@
+\subsection{Descripción de los Casos de uso}
+\begin{enumerate}
+  \item \textbf{Incluyendo un evento cultural:} se refiere a la funcionalidad para agregar nuevos eventos, como recitales, charlas, festivales, etc. Solo lo pueden hacer usuarios autorizados (inicialmente solo miembros de dependencias del Estado).
+  \item \textbf{Eliminando un evento cultural:} se refiere a la funcionalidad por la cual una dependencia del Estado puede eliminar un evento cultural previamente creado.
+  \item \textbf{Editando un evento cultural:} se refiere a la funcionalidad por la cual una dependencia del Estado puede modificar los datos de un evento cultural previamente creado.
+  \item \textbf{Rankeando evento:} se refiere a la funcionalidad que le permite a un miembro identificado de la comunidad calificar un evento en distintas categorías como, por ejemplo, ``Organización'', “Calidad” y “Ubicación”. Solo usuarios identificados podrán realizar esta acción, y se ponderará la calificación de acuerdo a la categoría del usuario (inicial, intermedio o experto).
+  \item \textbf{Buscando evento:} se refiere a la funcionalidad por la cual los usuarios de la aplicación buscarán eventos, pudiendo filtrar los resultados por una serie de criterios (por ejemplo: fecha, temática, ubicación, etc) usando el caso de uso ``Filtrando resultados'' (CU16).
+  %%%
+  %%% ACA VA UNA TABLA
+  %%%
+  \item \textbf{Compartiendo información en redes sociales:} se refiere a la funcionalidad por la cual los miembros de la comunidad podrán compartir los diferentes eventos disponibles en la aplicación en diferentes redes sociales como Facebook o Twitter, de manera que otras personas que no necesariamente tienen la aplicación puedan conocer su existencia.
+  \item \textbf{Logueandose:} se refiere a la funcionalidad por la cual los usuarios anónimos con una cuenta previamente creada podrán identificarse con el sistema, lo cual les habilitará a tener información personalizada (por ejemplo, según el barrio en el que viven), valorar eventos, y poder realizar reservas de vuelos y hoteles.
+  \item \textbf{Registrándose:} se refiere a la funcionalidad a través de la cual los usuarios anónimos pueden crearse una cuenta en el sistema, para eventualmente poder identificarse y aprovechar los privilegios que esto acarrea.
+  \item \textbf{Verificando contenido inapropiado automatizado:} se refiere a la funcionalidad con la que el sistema utiliza la API de moderación de contenidos. La misma pone puntajes de 1 (contenido inapropiado), 2 (contenido dudoso, proceder a verificación manual) o 3 (contenido seguro)
+  \item \textbf{Verificando contenido inapropiado manualmente:} se refiere a la funcionalidad para que un moderador pueda determinar si un determinado contenido es apropiado o no. Este caso de uso solo se activa para aquellos contenidos que son calificados con 2 por CU9.
+  \item \textbf{Enviando Publicidad:} se refiere a la funcionalidad que le permite a los sponsors económicos de la aplicación enviar su material publicitario para ser mostrado por la página.
+  \item \textbf{Visualizando Caminos:} se refiere a la funcionalidad que permite a los usuarios visualizar el o los caminos (en caso de que se hayan seleccionado múltiples eventos) desde su posición actual hasta cada evento. Se ofrecen diferentes tipos de rutas: caminando, en auto particular, en taxi (usando la aplicación del gobierno de la Ciudad), y en transporte público. Eventualmente pueden combinarse eventos (CU18).
+  \item \textbf{Reservando Hoteles:} se refiere a la funcionalidad por la cual la API del sistema de la Cámara de Hoteles y Afines de la Ciudad (CAHAC) podrá registrar reservas de hoteles efectuadas por usuarios de la aplicación.
+  \item \textbf{Reservando Vuelos:} se refiere a la funcionalidad por la cual la API del sistema de Aerolíneas Argentinas podrá registrar reservas de vuelos efectuadas por usuarios de la aplicación.
+  \item  \textbf{Obteniendo estadísticas sobre los usuarios:} se refiere a la API desarrollada para que las empresas de Big Data puedan obtener los datos estadísticos sobre los usuarios.
+  \item  \textbf{Filtrando resultados:} se refiere a la funcionalidad que le permite a los usuarios de la aplicación filtrar listas de eventos según diversos criterios a determinar.
+  \item  \textbf{Realizando Reserva:} se refiere a la funcionalidad por la cual los miembros de la comunidad podrán seleccionar y reservar vuelos/hoteles para participar de eventos publicados en la aplicación utilizando los servicios provistos por Aerolíneas Argentinas, para vuelos, y de la Cámara de Hoteles y Afines de la Ciudad, para alojamientos .
+  %%%
+  %%% ACA VA UNA TABLA
+  %%%
+  \item \textbf{Combinando eventos:}  se refiere a la funcionalidad que extiende al caso CU10, permitiendo combinar eventos de forma tal que se obtenga el mejor camino que pasa por todas las ubicaciones.
+\end{enumerate}

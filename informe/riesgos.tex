@@ -1,0 +1,89 @@
+\paragraph{Riesgo 1}
+\begin{itemize}  
+  \item \textbf{Descripción:} Dado que se pueden dar problemas de conexión y se requiere que todos los días extraigan los datos (por  limitaciones de espacio) se podría llegar a fallar en entregar los datos pedidos a las compañías de big data.
+  \item \textbf{Probabilidad:} Baja
+  \item \textbf{Impacto:} Medio
+  \item \textbf{Exposición:} Baja
+  \item \textbf{Mitigación:} Tener el espacio necesario para almacenar, como mínimo, el doble de la información que esperamos almacenar en promedio.
+  \item \textbf{Plan de contingencia:} En caso de que el servicio de big data este caído por varios días y no queramos perder información, se debería hacer backup manual de los datos antes de que sean sobreescritos.
+\end{itemize}
+
+\paragraph{Riesgo 2}
+\begin{itemize}
+  \item \textbf{Descripción:} No tener la integración con Aerolíneas y CAHAC hecha para el 2017.
+  \item \textbf{Probabilidad:} Media
+  \item \textbf{Impacto:} Alto
+  \item \textbf{Exposición:} Alta
+  \item \textbf{Mitigación:} Completar la integración en las primeras dos iteraciones del desarrollo. Asignar a los mejores programadores y más recursos a realizar esta tarea.
+  \item \textbf{Plan de contingencia:} En caso que muchos eventos imprevistos suceden y no se llegue a tiempo, se podría pedir una extensión a Aerolíneas con la suficiente anticipación. Además, se podría hacer que el equipo abandone el desarrollo de otras funcionalidades y se aboque en su totalidad a finalizar la integración.
+\end{itemize}
+
+\paragraph{Riesgo 3}
+\begin{itemize}
+  \item \textbf{Descripción:} Incapacidad del sistema de moderación principal para procesar los pedidos en tiempo real (Tanto de congestión como por caída del sistema).
+  \item \textbf{Probabilidad:} Alta (Depende fuertemente del sistema).
+  \item \textbf{Impacto:} Baja
+  \item \textbf{Exposición:} Media
+  \item \textbf{Mitigación:} Realizar estudios para tener una excelente aproximación de tráfico, de tal manera de poder comunicarlo a la empresa que provee el servicio. Tener un servicio secundario, de tal manera que si el primario se cae o funciona mal, podamos usarlo.
+  \item \textbf{Plan de contingencia:} En caso que todo falle y no podamos analizar comentarios en tiempo real, podemos almacenarlos en una cola y para que sean analizados más adelante cuando todo vuelva a la normalidad. En caso que el sistema tarde mucho en volver a la normalidad, perderemos comentarios.
+\end{itemize}
+
+\paragraph{Riesgo 4}
+\begin{itemize}
+  \item \textbf{Descripción:} Perder la conexión a internet.
+  \item \textbf{Probabilidad:} Baja
+  \item \textbf{Impacto:} Alto
+  \item \textbf{Exposición:} Media
+  \item \textbf{Mitigación:} Tener una conexión secundaria (o más de una) de tal manera que si se cae, podamos usar esa.
+  \item \textbf{Plan de contingencia:} Deberíamos tener un sistema rotatorio de on-calls, de tal manera que si se cae internet, en cualquier momento se le avise al on-call y este se ocupe de trasladar el servicio a una nueva conexión.
+\end{itemize}
+
+\paragraph{Riesgo 5}
+\begin{itemize}
+  \item \textbf{Descripción:} Filtración de datos privados
+  \item \textbf{Probabilidad:} Baja
+  \item \textbf{Impacto:} Alto
+  \item \textbf{Exposición:} Media
+  \item \textbf{Mitigación:} Diseñar un sistema de detección de intrusiones. Enviar datos al servicio de big data de forma encriptada y des-asociada del nombre del usuario.
+  \item \textbf{Plan de contingencia:} Almacenar los datos personales de las cuentas de las personas de forma encriptada, de tal manera que si se filtran no sean legibles.
+\end{itemize}
+
+\paragraph{Riesgo 6}
+\begin{itemize}
+  \item \textbf{Descripción:} Usuarios creados con la intención de manipular la valoración de los eventos
+  \item \textbf{Probabilidad:} Alta
+  \item \textbf{Impacto:} Bajo
+  \item \textbf{Exposición:} Media
+  \item \textbf{Mitigación:} Pedir datos personales a la hora de crear la cuenta (Por ejemplo DNI o CUIT).
+  \item \textbf{Plan de contingencia:} Diseñar un sistema que detecte que un evento está recibiendo muchas valoraciones y avise al on-call para que realice una revisión manual de la situación.
+\end{itemize}
+
+\paragraph{Riesgo 7}
+\begin{itemize}
+  \item \textbf{Descripción:} Renuncia de personal clave del equipo de desarrollo.
+  \item \textbf{Probabilidad:} Baja
+  \item \textbf{Impacto:} Medio
+  \item \textbf{Exposición:} Baja
+  \item \textbf{Mitigación:} Distribuir el trabajo de manera de que nadie esté demasiado sobrecargado y todos conozcan todo lo que se hace.
+  \item \textbf{Plan de contingencia:} En caso de renuncias, reorganizar el equipo de tal manera que el programador que más conozco el trabajo del programador que renunció retome sus tareas.
+\end{itemize}
+
+\paragraph{Riesgo 8}
+\begin{itemize}
+  \item \textbf{Descripción:} Que el tráfico promedio de usuarios sea más del previsto y los sistemas internos estén continuamente sobrecargados.
+  \item \textbf{Probabilidad:} Baja (Suponiendo una buena estimación inicial)
+  \item \textbf{Impacto:} Alto
+  \item \textbf{Exposición:} Media
+  \item \textbf{Mitigación:} Hacer estimaciones lo mejor posibles.
+  \item \textbf{Plan de contingencia:} Diseñar un balanceador de cargas y usarlo. Tener varias instancias del servidor corriendo en paralelo y totalmente replicadas.
+\end{itemize}
+
+\paragraph{Riesgo 9}
+\begin{itemize}
+  \item \textbf{Descripción:} Si la cantidad de ventas de hoteles y boletos de avión no fuera la suficiente, Aerolíneas podría retirar su inversión.
+  \item \textbf{Probabilidad:} Baja (Muy difícil de estimar).
+  \item \textbf{Impacto:} Medio
+  \item \textbf{Exposición:} Media
+  \item \textbf{Mitigación:} Hacer que la integración con Aerolíneas sea impecable. Diseñar publicidades llamativas pero poco invasivas.
+  \item \textbf{Plan de contingencia:} Cuando la aplicación esté funcionando, invertir tempranamente en hardware y ahorrar dinero para poder hacer una inversión grande en caso que Aerolíneas Argentinas retire la suya.
+\end{itemize}
