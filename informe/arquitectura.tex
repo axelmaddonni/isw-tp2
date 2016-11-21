@@ -51,6 +51,14 @@
 
 \subsection{Explicación de la Arquitectura}
 
+\subsubsection{Manejador de Requests}
+
+La comunicación entre el usuario, desde la página web de la aplicación, y el server se realiza mediante HTTP. El Receptor de Requests recibe un request HTTP y se lo forwardea al Traductor, que lo convierte al formato del sistema. Luego el Forwarder lo envía al componente correspondiente.
+
+Una vez que se recibe la respuesta del componente, se valida. Si se le encuentra algún error, se envía un mensaje al Enviador de Alertas. Si no, se la manda al Traductor HTML, que la convierte en el formato que espera el cliente.
+
+El propósito de este componente es limitar la interacción con el cliente a un solo punto del server. Adicionalmente, los demás componentes se pueden desligar de la representación HTML de sus respuestas.
+
 \subsubsection{Manejador de Eventos}
 
 El manejador de eventos es el encargado de responder a las distintos requests que envía un usuario de la aplicación desde la interfaz para ejecutar una acción sobre un evento: agregar uno nuevo, modificar, eliminar, valorar, visualizar y búsqueda de eventos.
@@ -102,6 +110,13 @@ Luego, siguiendo un estilo de pipes and filters, esa información es desencripta
 
 Simplemente recibe un usuario y una contraseña y la chequea contra la base de datos de los usuarios, y devuelve un token que podrá utilizar la UI (token de sesión, utilizado por el conector encriptado).
 
+\subsubsection{Manejador de Reservas}
+
+El Analizador de Requests decide a que subcomponente forwardear un request entrante. Si simplemente se busca saber qué reservas están disponibles para un evento dado, se lo envía al Pedidor de Reservas. El Analizador de Pedidos busca en el cache de reservas; si no se encuentra lo buscado, forwardea las requests correspondientes a los distintos manejadores de APIs externas.
+
+El Coordinador de Reservas maneja las reservas que cada usuario está considerando pero aún no finalizó y pagó. El Analizador forwardea el request al subcomponente correspondiente. Si el usuario desea agregar una reserva, el Committer la escribe en el repositorio. El checker indica qué reservas un usuario está mantienendo actualmente. Si desea concretarlas, el Reservador forwardea el request al Sistema de Pago Unificado; si la transacción procede correctamente, el Reservador le envía un mensaje al Remover para que borre las reservas del repositorio, pues ya fueron concretadas.
+
+Aprovecharemos que  tanto CAHAC como Aerolíneas tienen sus propios sistemas de pago para las reservas; sin embargo, sería altamemente inconveniente para el usuario tener que entrar sus datos separadamente en cada sistema. Este componente unifica el pago, forwardeando los datos que entra el usuario a las diversas APIs, concretando las reservas sólo si ninguna tuvo problemas. El Coordinador de Precios presenta un sumario unificado de la transacción.
 
 \subsubsection{Manejador de Publicidades}
 
@@ -123,7 +138,7 @@ La UI ReciBarFiesta tiene varios subcomponentes que se ocupan de realizar distin
   \item \textbf{UI Perfil Eventos.} Permite visualizar eventos. Este componente a su vez tiene dos subcomponentes internos, que son \textbf{Obtenedor de Inforamción de Evento}, que se ocupa de obtener la información de un evento y mostrarla, y \textbf{UI Valorador de Evento}, que se ocupa de enviar una nueva valorización del evento.
 \end{itemize}
 
-Cómo la presencia de las publicidades de Aerolíneas Argentinas debe ser constante, la UI tiene dentro un distribuidor de publicidades. Cada vez que un componente de la UI entra en acción, le pide una publicidad al Distribuidor de Publicidades, que se ocupará de enviarle el respectivo request al sistema.
+Como la presencia de las publicidades de Aerolíneas Argentinas debe ser constante, la UI tiene dentro un distribuidor de publicidades. Cada vez que un componente de la UI entra en acción, le pide una publicidad al Distribuidor de Publicidades, que se ocupará de enviarle el respectivo request al sistema.
 
 
 

@@ -1,8 +1,8 @@
 all: informe
 
 informe: informe.tex
-	pdflatex -interaction nonstopmode informe.tex
-	pdflatex -interaction nonstopmode informe.tex
+	pdflatex -draftmode -interaction nonstopmode informe.tex
+	pdflatex -draftmode -interaction nonstopmode informe.tex
 	pdflatex -interaction nonstopmode informe.tex
 
 view:
