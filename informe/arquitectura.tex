@@ -89,4 +89,22 @@ Interactuará con la empresa de análisis de datos y con la UI de ReciBarFiesta.
 
 \textbf{Acciones de Usuarios (PubSub) y Encriptador}
 
-Estos dos componentes son los más importantes a la hora de 
+Estos dos componentes son los más importantes a la hora de guardar las acciones de los usuarios en la aplicación. Cada vez que un usuario haga una accion, el componente que la realiza deberá publicarlo en el PubSub. Hay un encriptador que se ocupa de encriptar los datos y guardarlos en la base de datos de historial de acciones de usuarios. De esta manera la información queda resguardada ante eventuales leaks de información.
+
+\textbf{Manejador BigData}
+
+Este sub-componente de Manejador de Usuarios se ocupa de recibir los pedidos de la empresa de análisis de datos y responderlos. Los pedidos los recibe un Recibidor de Pedidos de Big Data, y es forwardeado por un Forwardeador. Este pedido es recibido por el Recibidor Pedido de Big Data, que chequea cuando fue la última vez que recibió un request y devuelve todas las acciones desde ese momento por un pipe, asociando las acciones con los usuarios, que extrae del repositorio
+llamado Información de Usuarios.
+
+Luego, siguiendo un estilo de pipes and filters, esa información es desencriptada, luego anonimizada (se borra la información que permita identificar personas) y luego se encripta nuevamente de manera qu esolo la empresa de análisis de datos pueda leer esos datos. Esto puede hacerse por ejemplo, con un sistema de clave público-privada, muy fácilmente.
+
+\textbf{Autorizador de Usuarios}
+
+Simplemente recibe un usuario y una contraseña y la chequea contra la base de datos de los usuarios, y devuelve un token que podrá utilizar la UI (token de sesión, utilizado por el conector encriptado).
+
+
+\subsubsection{UI ReciBarFiesta}
+
+\ldots
+
+
