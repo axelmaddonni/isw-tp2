@@ -1,0 +1,15 @@
+\subsection{Aspectos particularmente importantes y cómo los resolvimos}
+
+\subsubsection{¿Cómo se cumplen los requerimientos de seguridad respecto de los servicios para las empresas enfocadas en los grandes datos?}
+
+Utilizamos varias tácticas para cumplir con los requerimientos de seguridad.
+
+Primero tenemos todos los datos de las bases de datos encriptados, tanto de la base de datos de Información de Usuarios como de Acciones de Usuarios. Esto permite que, aunque haya una intrusión en el sistema y las bases de datos se vean expuestas, el atacante no podrá obtener ningún tipo de información sobre los usuarios. Esto es una táctica de resistencia a ataques.
+
+Otra táctica que usamos es la desanonimización de los datos de los usuarios. Esto, desde algún punto de vista, puede verse como la táctica de separación de entidades. Esto nos permite que, por ejemplo, si hay alguna intrusión del lado de la empresa de grandes datos, no se pueda recuperar la información personal de los usuarios.
+
+Por último, todos los enlaces entre la empresa de grandes datos y nuestro sistema son a través de una conexión segura como la que está explicada en los diagramas, utilizando por ejemplo TLS, que nos brinda autenticación y no repudio, que son dos características muy deseables para el tipo de conexión que queremos establecer.
+
+\subsubsection{¿Cómo es la interacción con los servicios externos? (API de moderación, Aerolíneas, Cámara de Hoteles) ¿Hay disponibilidad? ¿Seguridad?}
+
+\subsubsection{¿Cómo se logra perfomance para responder las búsquedas de los usuarios?}
