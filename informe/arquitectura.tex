@@ -103,6 +103,14 @@ Luego, siguiendo un estilo de pipes and filters, esa información es desencripta
 Simplemente recibe un usuario y una contraseña y la chequea contra la base de datos de los usuarios, y devuelve un token que podrá utilizar la UI (token de sesión, utilizado por el conector encriptado).
 
 
+\subsubsection{Manejador de Publicidades}
+
+El Manejador de Publicidades es el componente encargado de utilizar las APIs de Aerolíneas y CAHAC para conseguir las últimas Publicidades de estas compañias y entregarselas a la Interfaz de Usuario ReciBarFiesta cuando esta lo requiera, la UI comunica esta a traves de un conector client Server enviando la acción que esta realizando el usuario, su ubicación y demás.
+
+La lógica interna consiste de un componente Manejador de Pedidos que modera entre el envío de publicidades de Hoteles y Vuelos para no excederse en el envío de un solo tipo de publicidad al mismo tiempo que intenta enviar los anuncios que mejor se adapten a las acciónes y caracteristicas del usuario. 
+
+Como se mencionó previamente es importante que la publicidad este siempre presente en el sitio web. Para lograr esto se tiene, en caso de que fallen las APIs, un repositorio de Publicidades de Respaldo que se va actualizando periódicamente.
+
 \subsubsection{UI ReciBarFiesta}
 
 \ldots
