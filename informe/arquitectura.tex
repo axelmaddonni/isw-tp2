@@ -5,7 +5,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/Nivel0.png}
-  \caption{\normalfont Vista de Nivel 0. Explicación del conector seguro.}
+  \caption{\normalfont Vista de Nivel 0. Explicación del conector seguro. (Hacer zoom para visualizar correctamente)}
 \end{figure} 
 
 
@@ -14,7 +14,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ReciBarFiesta.png}
-  \caption{\normalfont Vista de Nivel 1 de ReciBarFiesta del lado del servidor.}
+  \caption{\normalfont Vista de Nivel 1 de ReciBarFiesta del lado del servidor. (Hacer zoom para visualizar correctamente)}
 \end{figure} 
 
 \subsubsection{Manejador de Eventos}
@@ -22,7 +22,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ManejadorDeEventos.png}
-  \caption{\normalfont Vista del Manejador de Eventos}
+  \caption{\normalfont Vista del Manejador de Eventos. (Hacer zoom para visualizar correctamente)}
 \end{figure} 
 
 \subsubsection{Manejador de Usuarios}
@@ -30,7 +30,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ManejadorDeUsuarios.png}
-  \caption{\normalfont Vista del Manejador de Usuarios (con Manejador BigData). Vista de UI ReciBarFiesta. }
+  \caption{\normalfont Vista del Manejador de Usuarios (con Manejador BigData). Vista de UI ReciBarFiesta. (Hacer zoom para visualizar correctamente)}
 \end{figure} 
 
 \subsubsection{Manejador de Reservas}
@@ -38,7 +38,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ManejadorReservas.png}
-  \caption{\normalfont Vista del Manejador De Reservas.}
+  \caption{\normalfont Vista del Manejador De Reservas. (Hacer zoom para visualizar correctamente)}
 \end{figure} 
 
 \subsubsection{Manejador de Publicidades}
@@ -46,7 +46,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ManejadorDePublicidades.png}
-  \caption{\normalfont Vista del Manejador de Publicidades}
+  \caption{\normalfont Vista del Manejador de Publicidades. (Hacer zoom para visualizar correctamente)}
 \end{figure} 
 
 \subsection{Explicación de la Arquitectura}
@@ -113,6 +113,17 @@ Como se mencionó previamente es importante que la publicidad este siempre prese
 
 \subsubsection{UI ReciBarFiesta}
 
-\ldots
+La UI ReciBarFiesta tiene varios subcomponentes que se ocupan de realizar distintas acciones. Estos son:
+
+\begin{itemize}
+
+  \item \textbf{UI Reservas.} Permite hacer reservas de vuelos y hoteles. Envía requests a Manejador de Requests, que luego serán forwardeadas a un Manejador de Reservas.
+  \item \textbf{UI Buscador Eventos.} Permite buscar eventos.
+  \item \textbf{UI Alta/Baja/Modifiación de Eventos.} Permite borrar, crear y modificar eventos. El Manejador de eventos va a chequear que la request provenga de un usuario autorizado, y en caso de que así no sea, el request va a fallar.
+  \item \textbf{UI Perfil Eventos.} Permite visualizar eventos. Este componente a su vez tiene dos subcomponentes internos, que son \textbf{Obtenedor de Inforamción de Evento}, que se ocupa de obtener la información de un evento y mostrarla, y \textbf{UI Valorador de Evento}, que se ocupa de enviar una nueva valorización del evento.
+\end{itemize}
+
+Cómo la presencia de las publicidades de Aerolíneas Argentinas debe ser constante, la UI tiene dentro un distribuidor de publicidades. Cada vez que un componente de la UI entra en acción, le pide una publicidad al Distribuidor de Publicidades, que se ocupará de enviarle el respectivo request al sistema.
+
 
 
