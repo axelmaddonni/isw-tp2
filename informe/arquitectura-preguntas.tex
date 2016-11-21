@@ -12,4 +12,23 @@ Por último, todos los enlaces entre la empresa de grandes datos y nuestro siste
 
 \subsubsection{¿Cómo es la interacción con los servicios externos? (API de moderación, Aerolíneas, Cámara de Hoteles) ¿Hay disponibilidad? ¿Seguridad?}
 
+La interacción con los servicios externos es siempre mediante manejadores de esos servicios externos que nos abstraen y nos permiten reemplazarlos fácilmente.
+
+En cuanto a disponibilidad, implementamos un Ping Requester, que cada 10 minutos envía pings a los servicios para verificar que estén disponibles y funcionando correctamente. Si no lo están, se envía un mail al on-call del equipo, reportando el problema. Esta táctica es de detección de errores, y permite disminuir el downtime.
+
+Por otra parte, en servicios como las publicidades, implementamos caches de publicidades, que ante un problema de conexión con la API de Aerolíneas Argentinas que nos provee de publicidades, carga una publicidad de la cache de publicidades y la muestra.
+
+En cuanto a seguridad, implementamos el conector seguro para conectarnos a todos los servicios externos. Estos conectores usan TLS, que brinda integridad, autenticación y no repudio, todo lo deseable en una conexión segura. Esto nos permite resistir muy bien a los ataques. Además, nunca se envía información personal de los usuarios. Cada vez que información de usuarios va a ser envíada fuera del sistema, es anonimizada (se le quitan los datos personales y se la deja
+inidentificable a una persona física) y encriptada.
+
 \subsubsection{¿Cómo se logra perfomance para responder las búsquedas de los usuarios?}
+
+La performance se logra utilizando variadas tácticas.
+
+La táctica más simple es la de replicación. Tenemos nuestro servidor replicado y tenemos un manejador de requests entre la UI y el server side, que actúa como distribuidor de requests y balanceador de carga.
+
+Además, dentro del Manejador de Eventos, en la sección que concierne a la búsqueda de eventos, tenemos múltiples caches que permiten obtener la información a muchisima más velocidad que haciendo la búsqueda de cero. 
+
+Además, tenemos replicadas nuestras bases de datos, lo cual permite atender varias requests de lectura al mismo tiempo sin problemas.
+
+
