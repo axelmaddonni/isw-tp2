@@ -1,4 +1,120 @@
 \subsection{Escenarios de Seguridad}
+\begin{enumerate}
+\item Máxima confidencialidad respecto a la información sobre los usuarios
+  \begin{itemize}
+    \item \textbf{\textbf{Fuente:}} Un atacante interno o externo no autorizado
+    \item \textbf{\textbf{Estímulo:}} Intento no autorizado de obtener datos sobre los usuarios
+    \item \textbf{\textbf{Artifact:}} Comunicación entre el sistema central y el usuario, o datos internos del sistema sobre los usuarios
+    \item \textbf{\textbf{Entorno:}} Online
+    \item \textbf{\textbf{Respuesta:}} Los datos no son accesibles al atacante en tiempos razonables
+    \item \textbf{\textbf{Medida de respuesta:}} El tiempo requerido para que el atacante consiga la información deseada está, al menos, en el orden de los siglos
+  \end{itemize}
+\item Los datos de las estadísticas son anónimos
+  \begin{itemize}
+    \item \textbf{\textbf{Fuente:}} Un atacante externo potencialmente autorizado (como las empresas de big data)
+    \item \textbf{\textbf{Estímulo:}} Intento de asociar las estadísticas de uso con un usuario o grupo de usuarios en concreto
+    \item \textbf{\textbf{Artifact:}} Estadísticas de actividad de los usuarios
+    \item \textbf{\textbf{Entorno:}} Online
+    \item \textbf{\textbf{Respuesta:}} La identidad de los usuarios está oculta, i.e. las estadísticas son anónimas
+    \item \textbf{\textbf{Medida de respuesta:}} El ataque no logra asociar correctamente a un usuario con sus estadísticas en un 99.99\% de los casos.
+  \end{itemize}
+
+\item Exclusividad de las estadísticas sobre usuarios para la empresa de big data
+  \begin{itemize}
+    \item \textbf{\textbf{Fuente:}} Un individuo (u organización) externo no autorizado
+    \item \textbf{\textbf{Estímulo:}} Intento de acceder a información privilegiada
+    \item \textbf{\textbf{Artifact:}} Estadísticas de actividad de los usuarios
+    \item \textbf{\textbf{Entorno:}} Online
+    \item \textbf{\textbf{Respuesta:}} Los datos no son accesibles al atacante en tiempos razonables
+    \item \textbf{\textbf{Medida de respuesta:}} El tiempo requerido para que el atacante consiga la información deseada está, al menos, en el orden de años
+  \end{itemize}
+
+\item Solo usuarios autorizados pueden subir información de eventos
+  \begin{itemize}
+    \item \textbf{\textbf{Fuente:}} Individuo identificado no autorizado
+    \item \textbf{\textbf{Estímulo:}} Intento de subir información sobre eventos
+    \item \textbf{\textbf{Artifact:}} sistema ReciBarFiesta
+    \item \textbf{\textbf{Entorno:}} Online
+    \item \textbf{\textbf{Respuesta:}} El sistema impide la acción
+    \item \textbf{\textbf{Medida de respuesta:}} El intento fracasa el 99.999\% de las veces
+  \end{itemize}
+
+\item Detección de usuarios falsos creados solo para generar popularidad de algún evento o desprestigiar a otro
+  \begin{itemize}  
+    \item \textbf{\textbf{Fuente:}} Individuo con múltiples identificaciones
+    \item \textbf{\textbf{Estímulo:}} Intento de forzar el nivel de popularidad de un evento maliciosamente 
+    \item \textbf{\textbf{Artifact:}} Sistema de rankeo de eventos
+    \item \textbf{\textbf{Entorno:}} Online
+    \item \textbf{\textbf{Respuesta:}} El sistema previene que dichos individuos puedan abusar del sistema, y si falla en prevenirlo puede detectar su existencia y posteriormente castigarlos
+    \item \textbf{\textbf{Medida de respuesta:}} El tiempo requerido para crear una cantidad masiva de cuentas falsas que consigan el privilegio suficiente de poder modificar sensiblemente la popularidad de un bar está en el orden de las semanas (considerar que la duración de los eventos suele estar en un orden similar). De los casos que logran alterar el curso normal de una votación, el 90\% de las veces se los detecta
+  \end{itemize}
+\end{enumerate}
+
 \subsection{Escenarios de Disponibilidad}
+\begin{enumerate}
+  \item Comunicación constante con la API de moderación de contenidos 
+  \begin{itemize}
+    \item \textbf{Fuente:} Externa
+    \item \textbf{Estímulo:} Crash del servicio de moderación de contenidos
+    \item \textbf{Artifact:} Sistema de comentarios
+    \item \textbf{Entorno:} Operación normal
+    \item \textbf{Respuesta:} El sistema pasa a un estado degradado en el cual los comentarios se encolan, quedando pendientes de moderación hasta que se recupere el sistema
+    \item \textbf{Medida de respuesta:} El 99.99\% de las veces no se pierde ningún comentario
+  \end{itemize}
+
+  \item El sistema idealmente no debe dejar de funcionar nunca
+  \begin{itemize} 
+    \item \textbf{Fuente:} interna
+    \item \textbf{Estímulo:} falla por omisión reiterada (crash) 
+    \item \textbf{Artifact:} servicio del sistema
+    \item \textbf{Entorno:} Operación normal
+    \item \textbf{Respuesta:} el sistema detecta la falla y se pasa a modo degradado (perdiendo la funcionalidad que falló) durante el tiempo que toma la recuperación
+    \item \textbf{Medida de respuesta:} la disponibilidad de un servicio debe ser de al menos el 99.99\%
+  \end{itemize}
+\end{enumerate}
+
 \subsection{Escenarios de Modificabilidad}
+\begin{enumerate}
+  \item Extensible para agregar visualizaciones de  caminos
+  \begin{itemize}
+    \item \textbf{Fuente:} Desarrollador
+    \item \textbf{Estímulo:} Intención de agregar y/o modificar los algoritmos de visualización de caminos utilizados
+    \item \textbf{Artifact:} La funcionalidad y/o la performance del sistema
+    \item \textbf{Entorno:} Tiempo de diseño
+    \item \textbf{Respuesta:} Cambio efectuado sin efectos secundarios
+    \item \textbf{Medida de respuesta:} Se requieren menos de 200 horas hombre para llevar a cabo el cambio 
+  \end{itemize}
+
+  \item Modificación de la API para moderación de contenidos por mejoras continuas:
+  \begin{itemize}
+    \item \textbf{Fuente:} Desarrollador
+    \item \textbf{Estímulo:} Intención de adaptar el sistema a una nueva interfaz de la API de moderación de contenidos
+    \item \textbf{Artifact:} Módulo de moderación de contenidos del sistema
+    \item \textbf{Entorno:} Tiempo de diseño
+    \item \textbf{Respuesta:} Adaptación realizada sin efectos secundarios para el sistema
+    \item \textbf{Medida de respuesta:} La modificación pudo realizarse afectando únicamente a un módulo del sistema
+  \end{itemize}
+\end{enumerate}
+
 \subsection{Escenarios de Performance}
+\begin{enumerate}
+  \item El sistema no debe tener ningún tipo de demoras en las búsquedas de eventos con un nivel de tráfico normal
+  \begin{itemize}  
+    \item \textbf{Fuente:} Externa
+    \item \textbf{Estímulo:} Llegada periódica de múltiples búsquedas de eventos
+    \item \textbf{Artifact:} Servicio de búsqueda de eventos
+    \item \textbf{Entorno:} Carga normal
+    \item \textbf{Respuesta:} Procesamiento de las búsquedas
+    \item \textbf{Medida de respuesta:} Latencia total de la operación de a lo sumo 0.5 segundos
+  \end{itemize}
+
+  \item El sistema no debe quedarse cargando aún con un tráfico elevado
+  \begin{itemize}  
+    \item \textbf{Fuente:} Externa
+    \item \textbf{Estímulo:} Llegada periódica de múltiples búsquedas de eventos
+    \item \textbf{Artifact:} Servicio de búsqueda de eventos
+    \item \textbf{Entorno:} Sistema sobrecargado
+    \item \textbf{Respuesta:} Procesamiento de las búsquedas
+    \item \textbf{Medida de respuesta:} Latencia total de la operación de a lo sumo 1.5 segundos
+  \end{itemize}
+\end{enumerate}
