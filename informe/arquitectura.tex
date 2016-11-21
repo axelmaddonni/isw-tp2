@@ -5,7 +5,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/Nivel0.png}
-  \caption{\normalfont }
+  \caption{\normalfont Vista de Nivel 0. Explicación del conector seguro.}
 \end{figure} 
 
 
@@ -14,7 +14,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ReciBarFiesta.png}
-  \caption{\normalfont }
+  \caption{\normalfont Vista de Nivel 1 de ReciBarFiesta del lado del servidor.}
 \end{figure} 
 
 \subsubsection{Manejador de Eventos}
@@ -22,7 +22,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ManejadorDeEventos.png}
-  \caption{\normalfont }
+  \caption{\normalfont Vista del Manejador de Eventos}
 \end{figure} 
 
 \subsubsection{Manejador de Usuarios}
@@ -30,7 +30,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ManejadorDeUsuarios.png}
-  \caption{\normalfont }
+  \caption{\normalfont Vista del Manejador de Usuarios (con Manejador BigData). Vista de UI ReciBarFiesta. }
 \end{figure} 
 
 \subsubsection{Manejador de Reservas}
@@ -38,7 +38,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ManejadorReservas.png}
-  \caption{\normalfont }
+  \caption{\normalfont Vista del Manejador De Reservas.}
 \end{figure} 
 
 \subsubsection{Manejador de Publicidades}
@@ -46,7 +46,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{diagramas/ManejadorDePublicidades.png}
-  \caption{\normalfont }
+  \caption{\normalfont Vista del Manejador de Publicidades}
 \end{figure} 
 
 \subsection{Explicación de la Arquitectura}
@@ -78,3 +78,9 @@ Este componente es el encargado de almacenar las valoraciones de los usuarios en
 \textbf{Buscador de Eventos}
 
 El Driver Buscador de Eventos manejará las búsquedas realizadas por los usuarios, dividiéndolas en búsquedas por Features o búsquedas por Información Básica del evento. El Manejador de Búsquedas parseará el request del usuario y enviará la búsqueda al componente Buscador correspondiente según el tipo de la misma. Cada uno de estos componentes cuenta con una Caché donde se almacenarán las búsquedas más populares realizadas por los usuarios, que serán actualizadas periódicamente. Las cachés cuentan con tres niveles (primario, secundario, y terciario) según el nivel de popularidad de las búsquedas para garantizar performance. Una vez realizada la búsqueda, en caso de ser requerido por el usuario, el manejador enviará los resultados al Componente buscador de Eventos Combinables, para que genere búsquedas de eventos combinables (cercanos, temáticas relacionadas, etc.), que luego serán efectuadas por el Buscador correspondiente según se trate de búsquedas en la base de datos de perfiles o de información básica. Una vez obtenidos los resultados, se actualizan las cachés, se notifica al historial de usuario la acción realizada, y se devuelve una página con los resultados y links a las vistas de los eventos encontrados.
+
+
+
+\subsubsection{Manejador de Usuarios}
+
+El manejador de usuarios es el componente que se ocupa de todo lo referido a usuarios, 
